@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+<style>
+form {
+    margin: auto;
+    width: 35%;
+}
+
+.result {
+    margin: auto;
+    width: 35%;
+    border: 1px solid #ccc;
+}
+</style>
+
+<head>
+    <title>Vaccine Distribution Model</title>
+</head>
+<form action="{{ url_for('main') }}" method="POST">
+    <fieldset>
+        <legend>Input values:</legend>
+        hospital:
+        <input name="hospital" type="number" required>
+        <br>
+        <br> item:
+        <input name="item" type="number" required>
+        <br>
+        <br> dayofweek:
+        <input name="dayofweek" type="number" required>
+        <br>
+        <br> month:
+        <input name="month" type="number" required>
+        <br>
+        <br> year:
+        <input name="year" type="number" required>
+        <br>
+        <br> dayofyear:
+        <input name="dayofyear" type="number" required>
+        <br>
+        <br> dayofmonth:
+        <input name="dayofmonth" type="number" required>
+        <br>
+        <br> weekofyear:
+        <input name="weekofyear" type="number" required>
+        <br>
+        <br>
+        <input type="submit">
+    </fieldset>
+</form>
+<br>
+<div class="result" align="center">
+    {% if result %}
+    	{% for variable, value in original_input.items() %}
+    		<b>{{ variable }}</b> : {{ value }}
+    	{% endfor %}
+		<br>
+    	<br> Predicted vaccine quantity (IN LAKHS):
+   		<p style="font-size:50px">{{ result }}</p>
+    {% endif %}
+</div>
+
+</html>
