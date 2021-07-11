@@ -1,4 +1,5 @@
 This project is based on replenishment optimization for Covid Vaccination SCM.
+For vaccine quantity forecasting  using XGBoost model Predictive model helps in inventory optimization (Minimizing the number of deliveries from Warehouse)gives strong strategy for replenishment optimization.
 
 Tech stack: docker, jupyternotebook, flask
 
